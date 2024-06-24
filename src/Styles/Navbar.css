@@ -1,0 +1,34 @@
+/* .Navbar{
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: aliceblue;
+} */
+
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-bottom: 1px solid #ccc; /* Example border */
+  }
+  
+  .logo {
+    max-width: 150px; /* Adjust maximum width of the logo */
+    overflow: hidden; /* Prevent overflowing */
+  }
+  
+  .bodhaLogo {
+    width: 100%; /* Ensure the logo image fits within its container */
+    height: auto; /* Maintain aspect ratio */
+  }
+  

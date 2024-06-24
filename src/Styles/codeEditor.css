@@ -1,0 +1,114 @@
+.code-section {
+  display: flex;
+  flex-direction: column-reverse;
+  box-sizing: border-box;
+  height: 100%;
+  flex-grow: 1;
+  padding: 4px;
+  gap: 4px;
+}
+
+.code-section .editor {
+  box-sizing: border-box;
+  display: flex;
+  flex-grow: 1;
+
+  /* border: 1px solid royalblue; */
+}
+
+.code-section .navigation {
+  gap: 4px;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row-reverse;
+  height: 4%;
+  /* border: 1px solid steelblue; */
+}
+
+.code-section .navigation .button {
+  box-sizing: border-box;
+  font-size: small;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.button span {
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: "\00bb";
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+}
+.button:hover span {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.code-section .navigation .submitButton {
+  box-sizing: border-box;
+  font-size: small;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #8237f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-weight: bold;
+}
+
+.code-section .navigation .submitButton:hover {
+  background-color: #8237f4;
+  color: whitesmoke;
+}
+
+.code-section .navigation .prevButton {
+  box-sizing: border-box;
+  font-size: small;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.prevButton span {
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+}
+
+.prevButton span:before {
+  content: "\00ab";
+  opacity: 0;
+  top: 0;
+  left: -10px;
+  transition: 0.5s;
+}
+.prevButton:hover span {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.prevButton:hover span:before {
+  opacity: 1;
+  right: 0;
+}

@@ -1,0 +1,48 @@
+/* ThankYou.css */
+
+/* Container styles */
+.thank-you-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa; /* Light background color */
+  }
+  
+  /* Content styles */
+  .thank-you-content {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Limit width to maintain readability */
+  }
+  
+  .thank-you-content h1 {
+    color: #007bff; /* Primary color for headings */
+    font-size: 36px; /* Large font size for heading */
+    margin-bottom: 10px; /* Space below heading */
+  }
+  
+  .thank-you-content p {
+    font-size: 18px; /* Medium font size for paragraphs */
+    line-height: 1.5; /* Line spacing */
+    color: #333; /* Dark text color */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .thank-you-content {
+      padding: 10px;
+    }
+  
+    .thank-you-content h1 {
+      font-size: 32px;
+    }
+  
+    .thank-you-content p {
+      font-size: 16px;
+    }
+  }
+  
