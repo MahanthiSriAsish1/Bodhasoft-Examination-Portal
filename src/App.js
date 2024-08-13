@@ -29,7 +29,7 @@ const App = () => {
       // Insert one document
       const result = await testsCollection.insertOne(data);
 
-      console.log('Inserted new document with _id:', result);
+      // console.log('Inserted new document with _id:', result);
 
       // Optionally handle success or navigate to another page here
       setTestCompleted(true);
@@ -44,7 +44,12 @@ const App = () => {
   const handleRegistration = (userData) => {
     setName(userData.name);
     setEmail(userData.email);
-    setIsRegistered(true);
+    const result = localStorage.getItem("test_submitted")
+    if(result === 'true'){
+      setTestCompleted(true);
+    }else{
+      setIsRegistered(true);
+    }
   };
 
   const handleTestSubmit = async (answers) => {
@@ -56,6 +61,7 @@ const App = () => {
 
     try {
       await uploadAnswer(data);
+      localStorage.setItem("test_submitted",true)
     } catch (error) {
       console.error('Error uploading answers:', error);
       // Implement retry logic if needed
@@ -63,6 +69,10 @@ const App = () => {
       await uploadAnswer(data); // Retry uploading
     }
   };
+  useEffect(() => {
+    // Reset the test_submitted flag to false on component mount
+    localStorage.setItem("test_submitted", false);
+  }, []);
 
   useEffect(() => {
     if (isRegistered) {
@@ -73,66 +83,47 @@ const App = () => {
 
   const questions = [
     {
-      question: 'write a program in C to find the ASCII values of characters K, J, M, and N.',
-      type: 'code',
-    },
-    {
-      question: 'write a program in C to swap Two integers: 45 and 70',
-      type: 'code',
-    },
-    {
-      question: 'write a program in C to check if a string contains alphabets or not. Given String : "sTr!nG123$peciAL"',
-      type: 'code',
-    },
-    {
-      question: 'write a program in C to display fibonacci sequence upto 50 terms',
-      type: 'code',
-    },
-    {
-      question: 'write a program in C to find the roots of a quadratic equation',
-      type: 'code',
-    },
-    {
-      question: 'write a program in C to add two integers : 101 and 90',
-      type: 'code',
-    },
-    {
-      question: 'write a program in C to check if any given year is a leap year or not',
-      type: 'code',
-    },
-    {
-      question: 'write a program in C to calculate the sum of all natural numbers upto 100',
-      type: 'code',
-    },
-    {
-      question: 'write a program in C to check if the given integer is Positive or Negative',
-      type: 'code',
-    },
-    {
-      question: 'write a program in C to Find the Factorial of any integer',
-      type: 'code',
-    },
-    {
-      question: 'Explain how the break statement works in programming.  Provide an example where you would use the break statement in a loop.',
+      question: 'What is the syntax to find if all 2 conditions are correct in a SQL query?',
       type: 'text',
     },
     {
-      question: 'What is the purpose of using loops in programming',
+      question: 'What is the syntax to find if any of the 2 conditions are correct in a SQL query?',
       type: 'text',
     },
     {
-      question: 'Describe the role of the continue statement in loops.  Give an example scenario where you would use the continue statement.',
+      question: 'What is the syntax to select the top 6 records in a SQL query?',
       type: 'text',
     },
     {
-      question: 'What is decision-making in programming, and why is it important?',
+      question: 'What is the syntax to find the sum of all values in a given column in a SQL query?',
       type: 'text',
     },
     {
-      question: 'Explain the difference between while and for loop in C',
+      question: 'What is the syntax to delete a full table structure in SQL?',
+      type: 'text',
+    },
+    {
+      question: 'What is the syntax to check multiple OR conditions in a short way in a SQL query?',
+      type: 'text',
+    },
+    {
+      question: 'What is the syntax to arrange column values in ascending order in a SQL query?',
+      type: 'text',
+    },
+    {
+      question: 'What is the syntax to select unique values from a column in a SQL query?',
+      type: 'text',
+    },
+    {
+      question: 'What is the syntax to use conditions in a SQL query?',
+      type: 'text',
+    },
+    {
+      question: 'What is the syntax to add records to a table in SQL?',
       type: 'text',
     },
   ];
+  
 
   return (
     <div className="App">

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "../Styles/Navbar.css";
 
 const Navbar = ({ onSubmit }) => {
-  const initialTimeInSeconds = 125 * 60; // 125 minutes converted to seconds
+  const initialTimeInSeconds = 15 * 60; // 125 minutes converted to seconds
   const [timer, setTimer] = useState(initialTimeInSeconds);
 
   // Function to format seconds into HH:MM:SS format
